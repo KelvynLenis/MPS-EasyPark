@@ -11,7 +11,7 @@ public class UserManagerUI {
   private String password;
   UserManager userManager = new UserManager();
 
-  UserManagerUI(){
+  public UserManagerUI(){
 
   }
 
