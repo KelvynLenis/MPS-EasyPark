@@ -1,11 +1,13 @@
 import java.util.Scanner;
 
+import frontier.ParkingLotUI;
 import frontier.UserManagerUI;
 
 public class Main {
   public static void main(String[] args) throws Exception {
     
     UserManagerUI userUI = new UserManagerUI();
+    ParkingLotUI parkingLotUI = new ParkingLotUI();
     Scanner nextInput = new Scanner(System.in);
     int opcao;
 
@@ -32,7 +34,7 @@ public class Main {
         break;
 
         case 1:
-          userUI.createUser();     
+          userUI.createUser();
         break;
         
         case 2:

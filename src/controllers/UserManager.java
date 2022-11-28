@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import models.User;
 
 public class UserManager {
-  ArrayList<User> users = new ArrayList<User>();
+  private ArrayList<User> users = new ArrayList<User>();
 
   Validator validator = new Validator();
 
