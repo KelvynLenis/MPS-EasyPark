@@ -22,10 +22,6 @@ public class ParkingLotManager {
 
   }
 
-  public void listParkingLot() {
-
-  }
-
   public void updateParkingLot() {
 
   }
