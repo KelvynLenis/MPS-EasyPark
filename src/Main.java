@@ -34,23 +34,28 @@ public class Main {
         break;
 
         case 1:
-          userUI.createUser();
+          // userUI.createUser();
+          parkingLotUI.createParkingLot();
         break;
         
         case 2:
-          userUI.getUser();
+          // userUI.getUser();
+          parkingLotUI.getParkingLot();
         break;
 
         case 3:
-          userUI.listUsers();
+          // userUI.listUsers();
+          // parkingLotUI.
         break;
 
         case 4:
-          userUI.updateUser();
+          // userUI.updateUser();
+          parkingLotUI.updateParkingLot();
         break;
 
         case 5:
-          userUI.deleteUser();
+          // userUI.deleteUser();
+          parkingLotUI.deleteParkingLot();
         break;
 
         default:
