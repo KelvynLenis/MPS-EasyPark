@@ -63,5 +63,15 @@ public class UserManagerUI {
   
     userManager.deleteUser(name);
   }
+
+  public void exportUsersAsJSON(){
+    System.out.println("Chamando Manager...");
+    userManager.exportUsersAsJSON();
+  }
+
+  public void exportUsersAsTXT(){
+    System.out.println("Chamando Manager...");
+    userManager.exportUsersAsTXT();
+  }
   
 }

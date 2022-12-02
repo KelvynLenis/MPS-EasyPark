@@ -59,4 +59,15 @@ public class UserManager {
       }
     }
   }
+
+  public void exportUsersAsJSON() {
+    ExportJSON exportObj = new ExportJSON(users, "Output.json");
+    exportObj.exportUsers();
+  }
+  
+  public void exportUsersAsTXT() {
+    ExportTXT exportObj = new ExportTXT(users, "Output.txt");
+    exportObj.exportUsers();
+  }
+
 }

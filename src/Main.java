@@ -22,6 +22,8 @@ public class Main {
       System.out.println("3 - Listar Usuários");
       System.out.println("4 - Atualizar Usuário");
       System.out.println("5 - Deletar Usuário");
+      System.out.println("6 - Exportar Usuários JSON");
+      System.out.println("7 - Exportar Usuários TXT");
 
 
       System.out.print("Digite a opção desejada: ");
@@ -34,8 +36,8 @@ public class Main {
         break;
 
         case 1:
-          // userUI.createUser();
-          parkingLotUI.createParkingLot();
+          userUI.createUser();
+          // parkingLotUI.createParkingLot();
         break;
         
         case 2:
@@ -56,6 +58,14 @@ public class Main {
         case 5:
           // userUI.deleteUser();
           parkingLotUI.deleteParkingLot();
+        break;
+
+        case 6:
+          userUI.exportUsersAsJSON();
+        break;
+        
+        case 7:
+          userUI.exportUsersAsTXT();
         break;
 
         default:
