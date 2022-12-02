@@ -31,12 +31,6 @@ public class ParkingLot {
     setZipcode(zipcode);
     setVacanciesNumber(vacanciesNumber);
     setOwner((owner != null) ? owner : null);
-    
-    // this.name = name;
-    // this.address = address;
-    // this.zipcode = zipcode;
-    // this.vacanciesNumber = vacanciesNumber;
-    // this.owner = (owner != null) ? owner : null;
   }
 
   public String getName(){

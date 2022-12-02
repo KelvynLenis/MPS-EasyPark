@@ -7,7 +7,7 @@ public class ParkingLotManager {
 
   private ParkingLot parkingLot;
 
-  public ParkingLotManager(){
+  protected ParkingLotManager(){
   }
 
   public void createParkingLot(
@@ -34,12 +34,14 @@ public class ParkingLotManager {
 
   public void updateParkingLot(
     String newName, String newAddress,
-    String newZipcode, int newVacanciesNumber, String newOwnerName
+    String newZipcode, int newVacanciesNumber, String newOwnerName, User newOwner
   ) {    
-    parkingLot.setName(newName);
-    parkingLot.setAddress(newAddress);
-    parkingLot.setZipcode(newZipcode);
-    parkingLot.setVacanciesNumber(newVacanciesNumber);
+    parkingLot.setName((newName != null || newName.length() >= 0) ? newName : parkingLot.getName());
+    parkingLot.setAddress((newAddress != null || newAddress.length() >= 0) ? newAddress : parkingLot.getAddress() );
+    parkingLot.setZipcode((newZipcode != null || newZipcode.length() >= 0) ? newZipcode : parkingLot.getZipcode() );
+    parkingLot.setVacanciesNumber((newVacanciesNumber >= 0) ? newVacanciesNumber : parkingLot.getVacanciesNumber() );
+    ManagerFacade managerFacade = ManagerFacade.getInstance();
+    parkingLot.setOwner((newOwnerName != null || newOwnerName.length() >= 0) ? managerFacade.getUser(newOwnerName) : parkingLot.getOwner());
     System.out.println("Atualização realizada com sucesso!");
   }
 

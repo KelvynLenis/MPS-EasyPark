@@ -2,12 +2,12 @@ package frontier;
 
 import java.util.Scanner;
 
-import controllers.ParkingLotManager;
+import controllers.ManagerFacade;
 import models.User;
 
 public class ParkingLotUI {
   private Scanner parkingLotUiInput = new Scanner(System.in);
-  private ParkingLotManager parkingLotManager = new ParkingLotManager();
+  private ManagerFacade managerFacade = ManagerFacade.getInstance();
 
   private String name;
   private String address;
@@ -24,11 +24,11 @@ public class ParkingLotUI {
     System.out.print("Digite o número de vagas: ");
     totalVacanciesNumber = parkingLotUiInput.nextInt();   
     
-    parkingLotManager.createParkingLot(name, address, zipcode, totalVacanciesNumber, null);
+    managerFacade.createParkingLot(name, address, zipcode, totalVacanciesNumber, null);
   }
 
   public void getParkingLot() {
-    parkingLotManager.getParkingLot();
+    managerFacade.getParkingLot();
   }
 
   public void updateParkingLot() {
@@ -47,14 +47,14 @@ public class ParkingLotUI {
     System.out.print("Digite o novo dono: ");
     String ownerName = parkingLotUiInput.nextLine();
 
-    parkingLotManager.updateParkingLot(name, address, zipcode, totalVacanciesNumber, ownerName);
+    managerFacade.updateParkingLot(name, address, zipcode, totalVacanciesNumber, ownerName);
   }
 
   public void deleteParkingLot() {
     System.out.print("Digite o nome do estacionamento: ");
     name = parkingLotUiInput.nextLine();
   
-    parkingLotManager.deleteParkingLot();
+    managerFacade.deleteParkingLot();
   }
 
 }

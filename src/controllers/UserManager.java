@@ -20,16 +20,18 @@ public class UserManager {
     System.out.println("Cadastro realizado com sucesso!");
   }
 
-  public void getUser(String name){
+  public User getUser(String name){
     for(User u : users){
       if(name.equals(u.getName())){
         System.out.println("Name: " + u.getName());
         System.out.println("Type: " + u.getType());
-        return;
+
+        return u;
       }
 
       System.out.println("Failed to find this user!");
     }
+    return null;
   }
 
   public void listUsers() {
