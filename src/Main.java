@@ -44,6 +44,14 @@ public class Main {
           mainUI.getParkingLotUI();
         break;
 
+        case 6:
+          userUI.exportUsersAsJSON();
+        break;
+        
+        case 7:
+          userUI.exportUsersAsTXT();
+        break;
+
         default:
           break;
       }

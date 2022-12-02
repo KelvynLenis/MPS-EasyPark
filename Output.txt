@@ -1,0 +1,8 @@
+User 0: 
+name: George Strait
+type: ADM
+
+User 1: 
+name: Jon Pardi
+type: regular
+
