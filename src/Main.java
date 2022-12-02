@@ -45,11 +45,11 @@ public class Main {
         break;
 
         case 6:
-          userUI.exportUsersAsJSON();
+          // userUI.exportUsersAsJSON();
         break;
         
         case 7:
-          userUI.exportUsersAsTXT();
+          // userUI.exportUsersAsTXT();
         break;
 
         default:

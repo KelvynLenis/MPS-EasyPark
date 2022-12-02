@@ -66,12 +66,12 @@ public class UserManagerUI {
 
   public void exportUsersAsJSON(){
     System.out.println("Chamando Manager...");
-    userManager.exportUsersAsJSON();
+    // userManager.exportUsersAsJSON();
   }
 
   public void exportUsersAsTXT(){
     System.out.println("Chamando Manager...");
-    userManager.exportUsersAsTXT();
+    // userManager.exportUsersAsTXT();
   }
   
 }
