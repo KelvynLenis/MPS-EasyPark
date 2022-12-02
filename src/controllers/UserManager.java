@@ -34,11 +34,12 @@ public class UserManager {
     return null;
   }
 
-  public void listUsers() {
+  public ArrayList<User> listUsers() {
     for(User u: users){
       System.out.println("Name: " + u.getName());
       System.out.println("Type: " + u.getType());
     }
+    return this.users;
   }
 
   public void updateUser(String name, String newName, String newType, String newPassword){

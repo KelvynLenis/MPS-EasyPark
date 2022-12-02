@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class MainUI {
   public static MainUI instance;
   
+  boolean isRunning = true;
+  int opcao;
+  
   UserManagerUI userUI = new UserManagerUI();
   ParkingLotUI parkingLotUI = new ParkingLotUI();
 
@@ -20,17 +23,15 @@ public class MainUI {
     return instance;
   }
 
-  public void getUserUI(){
-    Scanner input = new Scanner(System.in);
-    int opcao;
-    boolean isRunning = true;
+  public void getUserUI(Scanner nextInput){
+    isRunning = true;
 
     while(isRunning){
       System.out.println("***************************************");
       System.out.println("                MENU                   ");
       System.out.println("                                       ");
       System.out.println("OPÇÕES: ");
-      System.out.println("0 - Sair do programa");
+      System.out.println("0 - Voltar");
       System.out.println("1 - Adicionar Usuário");
       System.out.println("2 - Acessar Usuário");
       System.out.println("3 - Listar Usuários");
@@ -39,7 +40,7 @@ public class MainUI {
 
       System.out.print("Digite a opção desejada: ");
 
-      opcao = input.nextInt();
+      opcao = nextInput.nextInt();
 
       switch (opcao) {
         case 0:
@@ -69,23 +70,52 @@ public class MainUI {
         default:
           break;
       }
-
     }
   }
 
-  public void getParkingLotUI(){
-    System.out.println("***************************************");
-    System.out.println("                MENU                   ");
-    System.out.println("                                       ");
-    System.out.println("OPÇÕES: ");
-    System.out.println("0 - voltar");
-    System.out.println("1 - Adicionar estacionamento");
-    System.out.println("2 - Acessar estacionamento");
-    System.out.println("3 - Atualizar estacionamento");
-    System.out.println("4 - Deletar estacionamento");
+  public void getParkingLotUI(Scanner nextInput){
+    isRunning = true;
 
+    while(isRunning){
+      System.out.println("***************************************");
+      System.out.println("                MENU                   ");
+      System.out.println("                                       ");
+      System.out.println("OPÇÕES: ");
+      System.out.println("0 - voltar");
+      System.out.println("1 - Adicionar estacionamento");
+      System.out.println("2 - Acessar estacionamento");
+      System.out.println("3 - Atualizar estacionamento");
+      System.out.println("4 - Deletar estacionamento");
+
+
+      System.out.print("Digite a opção desejada: ");
+
+      opcao = nextInput.nextInt();
+
+      switch (opcao) {
+        case 0:
+          isRunning = false;
+          break;
+
+        case 1:
+          parkingLotUI.createParkingLot();
+        break;
+        
+        case 2:
+          parkingLotUI.getParkingLot();
+        break;
+
+        case 3:
+          parkingLotUI.updateParkingLot(nextInput);
+        break;
+
+        case 4:
+          parkingLotUI.deleteParkingLot();
+        break;
+
+        default:
+          break;
+      }
+    }
   }
-
-
-
 }

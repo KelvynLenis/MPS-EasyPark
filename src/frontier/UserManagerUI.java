@@ -16,61 +16,54 @@ public class UserManagerUI {
   }
 
   public void createUser(){
-    System.out.println("Digite o tipo de usuário do sistema: ");
+    System.out.print("Digite o tipo de usuário do sistema: ");
     type = userManagerUiInput.nextLine();
-    System.out.println("Digite o nome do usuário: ");
+    System.out.print("Digite o nome do usuário: ");
     name = userManagerUiInput.nextLine();
-    System.out.println("Digite a senha: ");
+    System.out.print("Digite a senha: ");
     password = userManagerUiInput.nextLine();
 
-    System.out.println("Chamando Manager...");
+    System.out.print("Chamando Manager...");
 
     this.managerFacade.createUser(type, name, password);
   }
 
   public void getUser() {
-    System.out.println("Digite o nome do usuário: ");
+    System.out.print("Digite o nome do usuário: ");
     name = userManagerUiInput.nextLine();
-    System.out.println("Chamando Manager...");
 
     managerFacade.getUser(name);
   }
 
   public void listUsers(){
-    System.out.println("Chamando Manager...");
     managerFacade.listUsers();
   }
 
   public void updateUser(){
-    System.out.println("Digite o nome do usuário: ");
+    System.out.print("Digite o nome do usuário: ");
     name = userManagerUiInput.nextLine();
-    System.out.println("Digite o novo nome do usuário: ");
+    System.out.print("Digite o novo nome do usuário: ");
     String newName = userManagerUiInput.nextLine();
-    System.out.println("Digite o tipo de usuário do sistema: ");
+    System.out.print("Digite o tipo de usuário do sistema: ");
     type = userManagerUiInput.nextLine();
-    System.out.println("Digite a senha: ");
+    System.out.print("Digite a senha: ");
     password = userManagerUiInput.nextLine();
-
-    System.out.println("Chamando Manager...");
     
     managerFacade.updateUser(name, newName, type, password);
   }
 
   public void deleteUser(){
-    System.out.println("Digite o nome do usuário: ");
+    System.out.print("Digite o nome do usuário: ");
     name = userManagerUiInput.nextLine();
-    System.out.println("Chamando Manager...");
   
     managerFacade.deleteUser(name);
   }
 
   public void exportUsersAsJSON(){
-    System.out.println("Chamando Manager...");
     // userManager.exportUsersAsJSON();
   }
 
   public void exportUsersAsTXT(){
-    System.out.println("Chamando Manager...");
     // userManager.exportUsersAsTXT();
   }
   

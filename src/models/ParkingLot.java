@@ -5,7 +5,7 @@ public class ParkingLot {
   private String address;
   private String zipcode;
   private int vacanciesNumber;
-  private User owner;
+  private String owner;
 
   public static ParkingLot instance;
 
@@ -24,7 +24,7 @@ public class ParkingLot {
 
   public void setAll(
     String name, String address, 
-    String zipcode, int vacanciesNumber, User owner
+    String zipcode, int vacanciesNumber, String owner
   ){
     setName(name);
     setAddress(address);
@@ -57,10 +57,10 @@ public class ParkingLot {
   public void setVacanciesNumber(int newVacanciesNumber){
     this.vacanciesNumber = newVacanciesNumber;
   }
-  public User getOwner(){
+  public String getOwner(){
     return this.owner;
   }
-  public void setOwner(User newOwner){
+  public void setOwner(String newOwner){
     this.owner = newOwner;
   }
 }

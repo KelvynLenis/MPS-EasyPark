@@ -1,10 +1,13 @@
 package controllers;
 
+import java.util.ArrayList;
+
 import models.User;
 
 public class ManagerFacade {
-  protected UserManager userManager;
+  protected static UserManager userManager;
   protected ParkingLotManager parkingLotManager;
+  protected GenerateFiles generateFiles;
   public static ManagerFacade instance;
 
   protected ManagerFacade(){
@@ -21,6 +24,7 @@ public class ManagerFacade {
   public void startManagers(){
     userManager = new UserManager();
     parkingLotManager = new ParkingLotManager();
+    generateFiles = new GenerateFiles();
   }
 
   public void createUser(String type, String name, String password){
@@ -32,8 +36,8 @@ public class ManagerFacade {
     return u;
   }
 
-  public void listUsers() {
-    userManager.listUsers();
+  public static ArrayList<User> listUsers() {
+    return userManager.listUsers();
   }
 
   public void updateUser(String name, String newName, String newType, String newPassword){
@@ -49,7 +53,7 @@ public class ManagerFacade {
     String address,
     String zipcode,
     int totalVacanciesNumber,
-    User owner
+    String owner
   ) {
     parkingLotManager.createParkingLot(name, address, zipcode, totalVacanciesNumber, owner);
   }
@@ -58,15 +62,27 @@ public class ManagerFacade {
     parkingLotManager.getParkingLot();
   }
 
-  public void updateParkingLot(
-    String newName, String newAddress,
-    String newZipcode, int newVacanciesNumber, String newOwnerName
-  ) {
-    parkingLotManager.updateParkingLot(newName, newAddress, newZipcode, newVacanciesNumber, newOwnerName, null);
+  public void updateParkingLot(int opcao, String newValue) {
+    parkingLotManager.updateParkingLot(opcao, newValue);
+  }
+  public void updateParkingLot(int opcao, int newValue) {
+    parkingLotManager.updateParkingLot(opcao, newValue);
   }
 
   public void deleteParkingLot() {
     parkingLotManager.deleteParkingLot();
+  }
+
+  public void exportJSON(){
+    ArrayList<User> users = ManagerFacade.listUsers();
+
+    generateFiles.exportUsersAsJSON(users);
+  }
+
+  public void exportTXT(){
+    ArrayList<User> users = ManagerFacade.listUsers();
+
+    generateFiles.exportUsersAsTXT(users);
   }
 
 }

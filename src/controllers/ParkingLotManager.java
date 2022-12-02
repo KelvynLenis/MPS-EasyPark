@@ -15,7 +15,7 @@ public class ParkingLotManager {
     String address,
     String zipcode,
     int totalVacanciesNumber,
-    User owner
+    String owner
   ) {
 
     parkingLot = ParkingLot.getInstance();
@@ -32,17 +32,35 @@ public class ParkingLotManager {
     System.out.println((parkingLot.getOwner() != null) ? parkingLot.getOwner() : "");
   }
 
-  public void updateParkingLot(
-    String newName, String newAddress,
-    String newZipcode, int newVacanciesNumber, String newOwnerName, User newOwner
-  ) {    
-    parkingLot.setName((newName != null || newName.length() >= 0) ? newName : parkingLot.getName());
-    parkingLot.setAddress((newAddress != null || newAddress.length() >= 0) ? newAddress : parkingLot.getAddress() );
-    parkingLot.setZipcode((newZipcode != null || newZipcode.length() >= 0) ? newZipcode : parkingLot.getZipcode() );
-    parkingLot.setVacanciesNumber((newVacanciesNumber >= 0) ? newVacanciesNumber : parkingLot.getVacanciesNumber() );
-    ManagerFacade managerFacade = ManagerFacade.getInstance();
-    parkingLot.setOwner((newOwnerName != null || newOwnerName.length() >= 0) ? managerFacade.getUser(newOwnerName) : parkingLot.getOwner());
+  public void updateParkingLot(int opcao, String newValue) {
+    switch (opcao) {
+      case 0:
+        break;
+
+      case 1:
+        parkingLot.setName(newValue);  
+      break;
+      
+      case 2:
+      parkingLot.setAddress(newValue);
+      break;
+      
+      case 3:
+      parkingLot.setZipcode(newValue);
+      break;
+      
+      case 5:
+        parkingLot.setOwner(newValue);
+      break;
+
+      default:
+      break;
+    }
     System.out.println("Atualização realizada com sucesso!");
+  }
+
+  public void updateParkingLot(int opcao, int newValue){
+    parkingLot.setVacanciesNumber(newValue);
   }
 
   public void deleteParkingLot() {

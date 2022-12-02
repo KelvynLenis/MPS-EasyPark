@@ -2,14 +2,10 @@ import java.util.Scanner;
 
 import controllers.ManagerFacade;
 import frontier.MainUI;
-import frontier.ParkingLotUI;
-import frontier.UserManagerUI;
 
 public class Main {
   public static void main(String[] args) throws Exception {
     
-    // UserManagerUI userUI = new UserManagerUI();
-    // ParkingLotUI parkingLotUI = new ParkingLotUI();
     MainUI mainUI = MainUI.getInstance();
     
     ManagerFacade managerFacade = ManagerFacade.getInstance();
@@ -26,6 +22,8 @@ public class Main {
       System.out.println("0 - Sair do programa");
       System.out.println("1 - Gerir Usuário");
       System.out.println("2 - Gerir Estacionamentos");
+      System.out.println("3 - Exportar relátorio em JSON");
+      System.out.println("4 - Exportar relátorio em TXT");
 
       System.out.print("Digite a opção desejada: ");
       opcao = nextInput.nextInt();
@@ -37,19 +35,21 @@ public class Main {
         break;
 
         case 1:
-          mainUI.getUserUI();
+          mainUI.getUserUI(nextInput);
         break;
         
         case 2:
-          mainUI.getParkingLotUI();
+          mainUI.getParkingLotUI(nextInput);
         break;
 
-        case 6:
+        case 3:
           // userUI.exportUsersAsJSON();
-        break;
+          managerFacade.exportJSON();
+          break;
         
-        case 7:
+        case 4:
           // userUI.exportUsersAsTXT();
+          managerFacade.exportTXT();
         break;
 
         default:
