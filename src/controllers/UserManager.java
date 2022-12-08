@@ -2,16 +2,30 @@ package controllers;
 
 import java.util.ArrayList;
 
+import Utils.Conversor;
 import models.User;
 
 public class UserManager {
   private ArrayList<User> users = new ArrayList<User>();
 
+  Conversor conversor = new Conversor();
+
   Validator validator = new Validator();
 
   public void createUser(String type, String name, String password){
-    validator.validateLogin(name);
-    validator.validatePassword(password);
+    if(validator.validateLogin(name) == false){
+      return;
+    }
+    if (validator.validateUserExists(name) == true){
+      System.out.println("Usuário já cadastrado!");
+      System.out.println("Failed to register!");
+      return;
+    }
+    if (validator.validatePassword(password) == false){
+      System.out.println("Senha inválida!");
+      System.out.println("Failed to register!");
+      return;
+    }
 
     User user = new User(name, password, type);
 
@@ -35,6 +49,12 @@ public class UserManager {
   }
 
   public ArrayList<User> listUsers() {
+
+    if(users.isEmpty()){
+      System.out.println("No users found!");
+      return null;
+    }
+    
     for(User u: users){
       System.out.println("Name: " + u.getName());
       System.out.println("Type: " + u.getType());
@@ -43,6 +63,7 @@ public class UserManager {
   }
 
   public void updateUser(String name, String newName, String newType, String newPassword){
+
     for(User user : users){
       if(name.toLowerCase().equals(user.getName().toLowerCase())){
         user.setName((!newName.isEmpty() ? newName : user.getName()));
@@ -62,15 +83,4 @@ public class UserManager {
       }
     }
   }
-
-  public void exportUsersAsJSON() {
-    ExportJSON exportObj = new ExportJSON(users, "Output.json");
-    exportObj.exportUsers();
-  }
-  
-  public void exportUsersAsTXT() {
-    ExportTXT exportObj = new ExportTXT(users, "Output.txt");
-    exportObj.exportUsers();
-  }
-
 }

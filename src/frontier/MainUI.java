@@ -82,11 +82,16 @@ public class MainUI {
       System.out.println("                                       ");
       System.out.println("OPÇÕES: ");
       System.out.println("0 - voltar");
-      System.out.println("1 - Adicionar estacionamento");
-      System.out.println("2 - Acessar estacionamento");
-      System.out.println("3 - Atualizar estacionamento");
+      System.out.println("1 - Criar estacionamento");
+      System.out.println("2 - Detalhes do estacionamento");
+      System.out.println("3 - Editar estacionamento");
       System.out.println("4 - Deletar estacionamento");
-
+      System.out.println("5 - Dar entrada no estacionamento");
+      System.out.println("6 - Saida do estacionamento");
+      System.out.println("7 - Listar Veículos");
+      System.out.println("8 - Listar Empregados");
+      System.out.println("9 - Adicionar empregado no estacionamento");
+      System.out.println("10 - Remover empregado do estacionamento");
 
       System.out.print("Digite a opção desejada: ");
 
@@ -112,6 +117,34 @@ public class MainUI {
         case 4:
           parkingLotUI.deleteParkingLot();
         break;
+
+        case 5:
+          parkingLotUI.addUserToParkingLot();
+          // vehicle update here
+          // parkingLotUI.parkingLotEntry();
+        break;
+        
+        case 6:
+          parkingLotUI.removeUserFromParkingLot();
+          // vehicle update here
+          // parkingLotUI.parkingLotExit();
+        break;
+
+        case 7:
+          parkingLotUI.listUsersInParkingLot();
+          break;
+
+        case 8:
+          parkingLotUI.listEmployeesInParkingLot();
+          break;
+
+        case 9:
+          parkingLotUI.addEmployeeToParkingLot();
+          break;
+        
+        case 10:
+          parkingLotUI.removeEmployeeFromParkingLot();
+          break;
 
         default:
           break;

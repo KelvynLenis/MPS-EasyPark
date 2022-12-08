@@ -23,7 +23,6 @@ public class UserManagerUI {
     System.out.print("Digite a senha: ");
     password = userManagerUiInput.nextLine();
 
-    System.out.print("Chamando Manager...");
 
     this.managerFacade.createUser(type, name, password);
   }
@@ -36,7 +35,7 @@ public class UserManagerUI {
   }
 
   public void listUsers(){
-    managerFacade.listUsers();
+    ManagerFacade.listUsers();
   }
 
   public void updateUser(){
@@ -57,14 +56,6 @@ public class UserManagerUI {
     name = userManagerUiInput.nextLine();
   
     managerFacade.deleteUser(name);
-  }
-
-  public void exportUsersAsJSON(){
-    // userManager.exportUsersAsJSON();
-  }
-
-  public void exportUsersAsTXT(){
-    // userManager.exportUsersAsTXT();
   }
   
 }

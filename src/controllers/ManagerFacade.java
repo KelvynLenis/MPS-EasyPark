@@ -73,6 +73,38 @@ public class ManagerFacade {
     parkingLotManager.deleteParkingLot();
   }
 
+  public void addUser(String name){
+    parkingLotManager.addUser(name);
+  }
+
+  public void removeUser(String name){
+    parkingLotManager.removeUser(name);
+  }
+
+  public void listUsersInParkingLot(){
+    parkingLotManager.listUsersInParkingLot();
+  }
+
+  public void addEmployeeToParkingLot(String name){
+    parkingLotManager.addEmployee(name);
+  }
+
+  public void removeEmployeeFromParkingLot(String name){
+    parkingLotManager.removeEmployee(name);
+  }
+
+  public void listEmployeesInParkingLot(){
+    parkingLotManager.listEmployeesInParkingLot();
+  }
+
+  public void parkingLotEntry(String controlCode, int vehicleCategory, String furtherServices){
+    parkingLotManager.parkingLotEntry(controlCode, vehicleCategory, furtherServices);
+  }
+
+  public void parkingLotExit(String controlCode){
+    parkingLotManager.parkingLotExit(controlCode);
+  }
+
   public void exportJSON(){
     ArrayList<User> users = ManagerFacade.listUsers();
 

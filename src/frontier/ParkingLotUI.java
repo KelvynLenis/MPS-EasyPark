@@ -3,7 +3,7 @@ package frontier;
 import java.util.Scanner;
 
 import controllers.ManagerFacade;
-import models.User;
+// import models.User;
 
 public class ParkingLotUI {
   private Scanner parkingLotUiInput = new Scanner(System.in);
@@ -108,5 +108,58 @@ public class ParkingLotUI {
   
     managerFacade.deleteParkingLot();
   }
+
+  public void addUserToParkingLot(){
+    System.out.print("Digite o nome do usuário: ");
+    String name = parkingLotUiInput.next();
+    managerFacade.addUser(name);
+  }
+
+  
+  public void removeUserFromParkingLot(){
+    System.out.print("Digite o nome do usuário: ");
+    String name = parkingLotUiInput.next();
+    managerFacade.removeUser(name);
+  }
+
+  public void listUsersInParkingLot(){
+    managerFacade.listUsersInParkingLot();
+  }
+
+  public void listEmployeesInParkingLot(){
+    managerFacade.listEmployeesInParkingLot();
+  }
+
+  public void parkingLotEntry(){
+    System.out.print("Digite o código de controle: ");
+    String controlCode = parkingLotUiInput.next();
+    System.out.println("Selecione a categoria do veículo:");
+    System.out.print("1 - Pequeno 2 - Grande 3 - Moto");
+    int vehicleCategory = parkingLotUiInput.nextInt();
+    System.out.print("Serviços adicionais(opcional): ");
+    String furtherServices = parkingLotUiInput.next();
+
+    managerFacade.parkingLotEntry(controlCode, vehicleCategory, furtherServices);
+
+  }
+
+  public void addEmployeeToParkingLot(){
+    System.out.print("Digite o nome do funcionário: ");
+    String name = parkingLotUiInput.next();
+    managerFacade.addEmployeeToParkingLot(name);
+  }
+
+  public void removeEmployeeFromParkingLot(){
+    System.out.print("Digite o nome do funcionário: ");
+    String name = parkingLotUiInput.next();
+    managerFacade.removeEmployeeFromParkingLot(name);
+  }
+
+  public void parkingLotOut(){
+    System.out.print("Digite o código de controle: ");
+    String controlCode = parkingLotUiInput.next();
+    managerFacade.parkingLotExit(controlCode);
+  }
+
 
 }

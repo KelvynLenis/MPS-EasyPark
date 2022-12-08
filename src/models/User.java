@@ -1,9 +1,14 @@
 package models;
 
+import models.vehicle.Car;
+
 public class User {
   private String name;
   private String type;
+  private String email;
+  private String cpf;
   private String password;
+  private Car car;
 
   public User(String name, String password, String type){
     this.name = name;
@@ -17,6 +22,22 @@ public class User {
 
   public String getType(){
     return this.type;
+  }
+
+  public void setEmail(String email){
+    this.email = email;
+  }
+  
+  public String getEmail(){
+    return this.email;
+  }
+
+  public void setCpf(String cpf){
+    this.cpf = cpf;
+  }
+
+  public String getCpf(){
+    return this.cpf;
   }
 
   public void setName(String name){
@@ -35,5 +56,13 @@ public class User {
 
   public void resetPassword(String password) {
     this.password = password;
+  }
+
+  public void setCar(Car car) {
+    this.car = car;
+  }
+
+  public void getCar() {
+    System.out.println("Car: " + this.car);
   }
 }
