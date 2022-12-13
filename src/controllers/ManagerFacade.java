@@ -1,7 +1,6 @@
 package controllers;
 
 import java.util.ArrayList;
-
 import models.User;
 
 public class ManagerFacade {
@@ -108,13 +107,23 @@ public class ManagerFacade {
   public void exportJSON(){
     ArrayList<User> users = ManagerFacade.listUsers();
 
-    generateFiles.exportUsersAsJSON(users);
+    this.executeCommand(new ExportJSONCommand(generateFiles, users, "Output.json"));
   }
 
   public void exportTXT(){
     ArrayList<User> users = ManagerFacade.listUsers();
 
-    generateFiles.exportUsersAsTXT(users);
+    this.executeCommand(new ExportTXTCommand(generateFiles, users, "Output.txt"));
+  }
+
+  public void exportPDF() {
+    ArrayList<User> users = ManagerFacade.listUsers();
+
+    this.executeCommand(new ExportPDFCommand(generateFiles, users, "Output.pdf"));
+  }
+
+  public void executeCommand(ExportFileCommand exportFileCommand) {
+    exportFileCommand.execute();
   }
 
 }

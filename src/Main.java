@@ -24,6 +24,7 @@ public class Main {
       System.out.println("2 - Gerir Estacionamentos");
       System.out.println("3 - Exportar relátorio em JSON");
       System.out.println("4 - Exportar relátorio em TXT");
+      System.out.println("5 - Exportar relátorio em PDF");
 
       System.out.print("Digite a opção desejada: ");
       opcao = nextInput.nextInt();
@@ -50,6 +51,12 @@ public class Main {
         case 4:
           // userUI.exportUsersAsTXT();
           managerFacade.exportTXT();
+        break;
+
+        case 5:
+          // userUi.exportUserAsPDF();
+          managerFacade.exportPDF();
+
         break;
 
         default:

@@ -7,7 +7,7 @@ import models.User;
 
 public class ExportTXT extends ExportTemplate {
 
-    ExportTXT (ArrayList<User> users, String fileName) {
+    public ExportTXT (ArrayList<User> users, String fileName) {
         super(users, fileName);
     }
 
