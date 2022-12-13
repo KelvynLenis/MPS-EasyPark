@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import Utils.Conversor;
 import models.User;
@@ -19,11 +20,13 @@ public class UserManager {
     if (validator.validateUserExists(name) == true){
       System.out.println("Usuário já cadastrado!");
       System.out.println("Failed to register!");
+
       return;
     }
     if (validator.validatePassword(password) == false){
       System.out.println("Senha inválida!");
       System.out.println("Failed to register!");
+      
       return;
     }
 
@@ -32,6 +35,20 @@ public class UserManager {
     this.users.add(user);
 
     System.out.println("Cadastro realizado com sucesso!");
+    this.saveUserList();
+
+    return;
+  }
+
+  public UserListMemento saveUserList() {
+    Date date = new Date();
+
+    return new UserListConcrete(date.toString(), date, this.users);
+  }
+
+  public void restoreUserList(UserListMemento memento) {
+    UserListConcrete concreteMemento = (UserListConcrete) memento;
+    this.users = concreteMemento.getList();
   }
 
   public User getUser(String name){
