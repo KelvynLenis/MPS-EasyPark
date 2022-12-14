@@ -6,7 +6,6 @@ import Utils.VehicleTypes;
 import models.vehicle.PriceBehaviour;
 import models.vehicle.PriceCar;
 import models.vehicle.Vehicle;
-import models.vehicle.VehicleFactory;
 
 public class ParkingLot {
   private String name;
@@ -20,7 +19,6 @@ public class ParkingLot {
   private ArrayList<User> employees = new ArrayList<User>();
   private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>(); // vehicle update here
 
-  private VehicleFactory factory;
 
   public static ParkingLot instance;
 
