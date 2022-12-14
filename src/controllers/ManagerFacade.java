@@ -100,8 +100,8 @@ public class ManagerFacade {
     parkingLotManager.parkingLotEntry(controlNumber, vehicleCategory, furtherServices);
   }
 
-  public void parkingLotExit(int controlNumber){
-    parkingLotManager.parkingLotExit(controlNumber);
+  public void parkingLotExit(int controlNumber, String methodPayment){
+    parkingLotManager.parkingLotExit(controlNumber, methodPayment);
   }
 
   public void exportJSON(){

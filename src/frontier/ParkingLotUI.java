@@ -146,7 +146,10 @@ public class ParkingLotUI {
     System.out.print("Digite o código de controle: ");
     int controlNumber = parkingLotUiInput.nextInt();
 
-    managerFacade.parkingLotExit(controlNumber);
+    System.out.print("Digite o método de pagamento(pix, credito, debito ou boleto): ");
+    String methodPayment = parkingLotUiInput.next();
+
+    managerFacade.parkingLotExit(controlNumber, methodPayment);
   }
 
   public void addEmployeeToParkingLot(){

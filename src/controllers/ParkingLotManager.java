@@ -138,8 +138,8 @@ public class ParkingLotManager {
     parkingLot.parkingLotEntry(vehicle);
   }
 
-  public void parkingLotExit(int controlNumber){
-    parkingLot.parkingLotExit(controlNumber);
+  public void parkingLotExit(int controlNumber, String methodPayment){
+    parkingLot.parkingLotExit(controlNumber, methodPayment);
   }
 
 }
