@@ -119,15 +119,13 @@ public class MainUI {
         break;
 
         case 5:
-          parkingLotUI.addUserToParkingLot();
-          // vehicle update here
-          // parkingLotUI.parkingLotEntry();
+          // parkingLotUI.addUserToParkingLot();
+          parkingLotUI.parkingLotEntry();
         break;
         
         case 6:
-          parkingLotUI.removeUserFromParkingLot();
-          // vehicle update here
-          // parkingLotUI.parkingLotExit();
+          // parkingLotUI.removeUserFromParkingLot();
+          parkingLotUI.parkingLotExit();
         break;
 
         case 7:

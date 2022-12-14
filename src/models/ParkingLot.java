@@ -2,6 +2,12 @@ package models;
 
 import java.util.ArrayList;
 
+import Utils.VehicleTypes;
+import models.vehicle.PriceBehaviour;
+import models.vehicle.PriceCar;
+import models.vehicle.Vehicle;
+import models.vehicle.VehicleFactory;
+
 public class ParkingLot {
   private String name;
   private String address;
@@ -12,7 +18,9 @@ public class ParkingLot {
   private int totalEmployeesNumber;
   private ArrayList<User> users = new ArrayList<User>();
   private ArrayList<User> employees = new ArrayList<User>();
-  // private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>(); // vehicle update here
+  private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>(); // vehicle update here
+
+  private VehicleFactory factory;
 
   public static ParkingLot instance;
 
@@ -87,6 +95,9 @@ public class ParkingLot {
 
   public void addUser(User user){
     this.users.add(user);
+    // PriceBehaviour priceBehaviour;
+    // priceBehaviour = new PriceCar();
+    // Vehicle carFactory = CarFactory.addVehicle(5874, this.users.size(), "Null", priceBehaviour);
     this.availableVacanciesNumber--;
   }
 
@@ -126,11 +137,27 @@ public class ParkingLot {
     return toStringEmployees;
   }
 
-  public void parkingLotEntry(String controlCode, int vehicleCategory, String furtherServices){
-    // vehicle todo
+  public void parkingLotEntry(Vehicle vehicle){
+    vehicles.add(vehicle);
+    this.availableVacanciesNumber--;
   }
 
-  public void parkingLotExit(String controlCode){
-    // vehicle todo
+  public void parkingLotExit(int controlNumber){
+    for (Vehicle vehicle : vehicles) {
+      if(vehicle.getControlNumber() == controlNumber){
+        vehicles.remove(vehicle);
+        this.availableVacanciesNumber++;
+        break;
+      }
+    }
+  }
+
+  public ArrayList<Integer> listVehicles(){
+    ArrayList<Integer> controlNumberList = new ArrayList<Integer>();
+    for (Vehicle vehicle : vehicles) {
+      controlNumberList.add(vehicle.getControlNumber());
+    }
+
+    return controlNumberList;
   }
 }

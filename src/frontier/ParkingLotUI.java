@@ -123,7 +123,7 @@ public class ParkingLotUI {
   }
 
   public void listUsersInParkingLot(){
-    managerFacade.listUsersInParkingLot();
+    managerFacade.listVehiclesInParkingLot();
   }
 
   public void listEmployeesInParkingLot(){
@@ -132,15 +132,21 @@ public class ParkingLotUI {
 
   public void parkingLotEntry(){
     System.out.print("Digite o código de controle: ");
-    String controlCode = parkingLotUiInput.next();
-    System.out.println("Selecione a categoria do veículo:");
-    System.out.print("1 - Pequeno 2 - Grande 3 - Moto");
+    int controlNumber = parkingLotUiInput.nextInt();
+    System.out.println("Selecione a categoria do veículo:\n1 - Pequeno 2 - Grande 3 - Moto");
+    // System.out.println("1 - Pequeno 2 - Grande 3 - Moto");
     int vehicleCategory = parkingLotUiInput.nextInt();
     System.out.print("Serviços adicionais(opcional): ");
     String furtherServices = parkingLotUiInput.next();
 
-    managerFacade.parkingLotEntry(controlCode, vehicleCategory, furtherServices);
+    managerFacade.parkingLotEntry(controlNumber, vehicleCategory, furtherServices);
+  }
 
+  public void parkingLotExit(){
+    System.out.print("Digite o código de controle: ");
+    int controlNumber = parkingLotUiInput.nextInt();
+
+    managerFacade.parkingLotExit(controlNumber);
   }
 
   public void addEmployeeToParkingLot(){
@@ -154,12 +160,4 @@ public class ParkingLotUI {
     String name = parkingLotUiInput.next();
     managerFacade.removeEmployeeFromParkingLot(name);
   }
-
-  public void parkingLotOut(){
-    System.out.print("Digite o código de controle: ");
-    String controlCode = parkingLotUiInput.next();
-    managerFacade.parkingLotExit(controlCode);
-  }
-
-
 }

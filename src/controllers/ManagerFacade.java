@@ -80,8 +80,8 @@ public class ManagerFacade {
     parkingLotManager.removeUser(name);
   }
 
-  public void listUsersInParkingLot(){
-    parkingLotManager.listUsersInParkingLot();
+  public void listVehiclesInParkingLot(){
+    parkingLotManager.listVehiclesInParkingLot();
   }
 
   public void addEmployeeToParkingLot(String name){
@@ -96,12 +96,12 @@ public class ManagerFacade {
     parkingLotManager.listEmployeesInParkingLot();
   }
 
-  public void parkingLotEntry(String controlCode, int vehicleCategory, String furtherServices){
-    parkingLotManager.parkingLotEntry(controlCode, vehicleCategory, furtherServices);
+  public void parkingLotEntry(int controlNumber, int vehicleCategory, String furtherServices){
+    parkingLotManager.parkingLotEntry(controlNumber, vehicleCategory, furtherServices);
   }
 
-  public void parkingLotExit(String controlCode){
-    parkingLotManager.parkingLotExit(controlCode);
+  public void parkingLotExit(int controlNumber){
+    parkingLotManager.parkingLotExit(controlNumber);
   }
 
   public void exportJSON(){

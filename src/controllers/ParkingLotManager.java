@@ -2,6 +2,11 @@ package controllers;
 
 import models.ParkingLot;
 import models.User;
+import models.vehicle.BigCarFactory;
+import models.vehicle.MotorcycleFactory;
+import models.vehicle.SmallCarFactory;
+import models.vehicle.Vehicle;
+import models.vehicle.VehicleFactory;
 
 public class ParkingLotManager {
 
@@ -82,12 +87,12 @@ public class ParkingLotManager {
     parkingLot.removeUser(user);
   }
 
-  public void listUsersInParkingLot(){
-    if(this.parkingLot.listUsers() == null){
+  public void listVehiclesInParkingLot(){
+    if(this.parkingLot.listVehicles() == null){
       System.out.println("Estacionamento está vazio...");
       return;
     }
-    System.out.println("Usuários atualmente no estacionamento: " + this.parkingLot.listUsers());
+    System.out.println("Veículos atualmente no estacionamento: " + this.parkingLot.listVehicles());
   }
 
   public void addEmployee(String name){
@@ -109,12 +114,32 @@ public class ParkingLotManager {
     System.out.println("Empregados do estacionamento: " + this.parkingLot.listEmployees());
   }
 
-  public void parkingLotEntry(String controlCode, int vehicleCategory, String furtherServices){
-    parkingLot.parkingLotEntry(controlCode, vehicleCategory, furtherServices);
+  public void parkingLotEntry(int controlNumber, int vehicleCategory, String aditionalServices){
+    VehicleFactory factory;
+    Vehicle vehicle = null;
+
+    switch (vehicleCategory) {
+      case 1:
+        factory = new SmallCarFactory();
+        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, null);
+        break;
+      case 2:
+        factory = new BigCarFactory();
+        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, null);
+        break;
+      case 3:
+        factory = new MotorcycleFactory();
+        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, null);
+        break;
+      default:
+        break;
+    }
+    
+    parkingLot.parkingLotEntry(vehicle);
   }
 
-  public void parkingLotExit(String controlCode){
-    parkingLot.parkingLotExit(controlCode);
+  public void parkingLotExit(int controlNumber){
+    parkingLot.parkingLotExit(controlNumber);
   }
 
 }

@@ -1,8 +1,8 @@
 package models.vehicle;
 
-public class CarFactory extends VehicleFactory {
+public class SmallCarFactory extends VehicleFactory {
     @Override
     public Vehicle addVehicle(int controlNumber, int vacantNumber, String aditionalServices, PriceBehaviour priceBehaviour) {
-        return new Car(controlNumber, vacantNumber, aditionalServices, priceBehaviour);
+        return new SmallCar(controlNumber, vacantNumber, aditionalServices, priceBehaviour);
     }
 }

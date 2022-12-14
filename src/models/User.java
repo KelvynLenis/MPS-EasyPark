@@ -1,6 +1,5 @@
 package models;
 
-import models.vehicle.Car;
 
 public class User {
   private String name;
@@ -8,7 +7,6 @@ public class User {
   private String email;
   private String cpf;
   private String password;
-  private Car car;
 
   public User(String name, String password, String type){
     this.name = name;
@@ -58,11 +56,11 @@ public class User {
     this.password = password;
   }
 
-  public void setCar(Car car) {
-    this.car = car;
+  public void setCar() {
+    // this.car = car;
   }
 
   public void getCar() {
-    System.out.println("Car: " + this.car);
+    // System.out.println("Car: " + this.car);
   }
 }

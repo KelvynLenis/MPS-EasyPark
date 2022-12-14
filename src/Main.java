@@ -21,7 +21,7 @@ public class Main {
       System.out.println("OPÇÕES: ");
       System.out.println("0 - Sair do programa");
       System.out.println("1 - Gerir Usuário");
-      System.out.println("2 - Gerir Estacionamentos");
+      System.out.println("2 - Gerir Estacionamento");
       System.out.println("3 - Exportar relátorio em JSON");
       System.out.println("4 - Exportar relátorio em TXT");
       System.out.println("5 - Exportar relátorio em PDF");
@@ -44,17 +44,14 @@ public class Main {
         break;
 
         case 3:
-          // userUI.exportUsersAsJSON();
           managerFacade.exportJSON();
           break;
         
         case 4:
-          // userUI.exportUsersAsTXT();
           managerFacade.exportTXT();
         break;
 
         case 5:
-          // userUi.exportUserAsPDF();
           managerFacade.exportPDF();
 
         break;
