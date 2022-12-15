@@ -4,7 +4,7 @@ public class BankSlipHandler extends BaseCustomerPayment{
 
     @Override
     public CustomerPayment handle(CustomerPayment payment) {
-        if(payment.methodPayment == "boleto") {
+        if(payment.methodPayment.equals("boleto")) {
             payment.acceptPayment = true;
 
             System.out.println("O pagamento por boleto foi aprovado!");

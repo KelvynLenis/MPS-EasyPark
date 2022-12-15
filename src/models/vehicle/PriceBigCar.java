@@ -1,6 +1,6 @@
 package models.vehicle;
 
-public class PriceVan implements PriceBehaviour {
+public class PriceBigCar implements PriceBehaviour {
     
     private static final int INITIAL_PRICE = 10;
     

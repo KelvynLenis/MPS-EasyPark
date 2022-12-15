@@ -1,5 +1,7 @@
 package controllers;
 
+import models.ParkingLot;
+
 public class Validator {
   public boolean validateLogin(String login) {
     if(!(login.length() > 0 && login.length() <= 20)){
@@ -24,6 +26,18 @@ public class Validator {
 
     if(managerFacade.getUser(name) != null){
       System.out.println("User Exception: User already exists");
+      return true;
+    }
+
+    return false;
+  }
+
+  public boolean validateControlNumberAlreadyExists(int controlNumber) {
+    ParkingLot parkingLot = ParkingLot.getInstance();
+
+
+    if(parkingLot.listVehicles().contains(controlNumber)){
+      System.out.println("Vehicle Exception: Vehicle already exists");
       return true;
     }
 

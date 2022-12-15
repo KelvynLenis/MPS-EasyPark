@@ -4,6 +4,9 @@ import models.ParkingLot;
 import models.User;
 import models.vehicle.BigCarFactory;
 import models.vehicle.MotorcycleFactory;
+import models.vehicle.PriceBigCar;
+import models.vehicle.PriceMotorcycle;
+import models.vehicle.PriceSmallCar;
 import models.vehicle.SmallCarFactory;
 import models.vehicle.Vehicle;
 import models.vehicle.VehicleFactory;
@@ -121,21 +124,25 @@ public class ParkingLotManager {
     switch (vehicleCategory) {
       case 1:
         factory = new SmallCarFactory();
-        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, null);
+        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, new PriceSmallCar());
         break;
       case 2:
         factory = new BigCarFactory();
-        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, null);
+        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, new PriceBigCar());
         break;
       case 3:
         factory = new MotorcycleFactory();
-        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, null);
+        vehicle = factory.addVehicle(controlNumber, vehicleCategory, aditionalServices, new PriceMotorcycle());
         break;
       default:
         break;
     }
-    
-    parkingLot.parkingLotEntry(vehicle);
+
+    Validator validator = new Validator();
+
+    if(!validator.validateControlNumberAlreadyExists(controlNumber)){
+      parkingLot.parkingLotEntry(vehicle);
+    }
   }
 
   public void parkingLotExit(int controlNumber, String methodPayment){

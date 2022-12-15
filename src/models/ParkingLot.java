@@ -10,7 +10,7 @@ import controllers.DebitCardHandler;
 import controllers.NotFoundPaymentHandler;
 import controllers.PixHandler;
 import models.vehicle.PriceBehaviour;
-import models.vehicle.PriceCar;
+import models.vehicle.PriceSmallCar;
 import models.vehicle.Vehicle;
 
 public class ParkingLot {
@@ -23,7 +23,7 @@ public class ParkingLot {
   private int totalEmployeesNumber;
   private ArrayList<User> users = new ArrayList<User>();
   private ArrayList<User> employees = new ArrayList<User>();
-  private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>(); // vehicle update here
+  private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
 
 
   public static ParkingLot instance;
@@ -111,10 +111,6 @@ public class ParkingLot {
 
   public void addUser(User user) {
     this.users.add(user);
-    // PriceBehaviour priceBehaviour;
-    // priceBehaviour = new PriceCar();
-    // Vehicle carFactory = CarFactory.addVehicle(5874, this.users.size(), "Null",
-    // priceBehaviour);
     this.availableVacanciesNumber--;
   }
 

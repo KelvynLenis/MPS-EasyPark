@@ -134,12 +134,17 @@ public class ParkingLotUI {
     System.out.print("Digite o código de controle: ");
     int controlNumber = parkingLotUiInput.nextInt();
     System.out.println("Selecione a categoria do veículo:\n1 - Pequeno 2 - Grande 3 - Moto");
-    // System.out.println("1 - Pequeno 2 - Grande 3 - Moto");
     int vehicleCategory = parkingLotUiInput.nextInt();
-    System.out.print("Serviços adicionais(opcional): ");
-    String furtherServices = parkingLotUiInput.next();
+    System.out.print("Serviços adicionais(sim/nao): ");
+    String aditionalServices = parkingLotUiInput.next();
+    if ( aditionalServices.equals("sim") ) {
+      System.out.print("Digite o serviço adicional: ");
+      aditionalServices = parkingLotUiInput.next();
+    } else {
+      aditionalServices = "";
+    }
 
-    managerFacade.parkingLotEntry(controlNumber, vehicleCategory, furtherServices);
+    managerFacade.parkingLotEntry(controlNumber, vehicleCategory, aditionalServices);
   }
 
   public void parkingLotExit(){

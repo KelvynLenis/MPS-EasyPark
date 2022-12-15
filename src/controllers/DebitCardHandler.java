@@ -6,7 +6,7 @@ package controllers;
 public class DebitCardHandler extends BaseCustomerPayment {
     @Override
     public CustomerPayment handle(CustomerPayment payment) {
-        if(payment.methodPayment == "debito") {
+        if(payment.methodPayment.equals("debito")) {
             payment.acceptPayment = true;
             System.out.println("O pagamento por cartão de débito foi aprovado!");
 
