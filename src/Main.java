@@ -15,10 +15,10 @@ public class Main {
     int opcao;
 
     while(true){
-      System.out.println("***************************************");
-      System.out.println("                MENU                   ");
-      System.out.println("                                       ");
-      System.out.println("OPÇÕES: ");
+      System.out.println("***************************************************");
+      System.out.println("                 MENU - EasyPark                   ");
+      System.out.println("                                                   ");
+      System.out.println("INFORME UMA DAS OPÇÕES ABAIXO: ");
       System.out.println("0 - Sair do programa");
       System.out.println("1 - Gerir Usuário");
       System.out.println("2 - Gerir Estacionamento");
@@ -26,7 +26,7 @@ public class Main {
       System.out.println("4 - Exportar relátorio em TXT");
       System.out.println("5 - Exportar relátorio em PDF");
 
-      System.out.print("Digite a opção desejada: ");
+      System.out.print("Informe a sua opção desejada: ");
       opcao = nextInput.nextInt();
 
       switch (opcao) {

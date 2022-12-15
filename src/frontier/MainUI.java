@@ -30,7 +30,7 @@ public class MainUI {
       System.out.println("***************************************");
       System.out.println("                MENU                   ");
       System.out.println("                                       ");
-      System.out.println("OPÇÕES: ");
+      System.out.println("SELECIONE UMA DAS OPÇÕES ABAIXO: ");
       System.out.println("0 - Voltar");
       System.out.println("1 - Adicionar Usuário");
       System.out.println("2 - Acessar Usuário");
@@ -38,7 +38,7 @@ public class MainUI {
       System.out.println("4 - Atualizar Usuário");
       System.out.println("5 - Deletar Usuário");
 
-      System.out.print("Digite a opção desejada: ");
+      System.out.print("Informe a sua opção desejada: ");
 
       opcao = nextInput.nextInt();
 
@@ -77,11 +77,11 @@ public class MainUI {
     isRunning = true;
 
     while(isRunning){
-      System.out.println("***************************************");
-      System.out.println("                MENU                   ");
-      System.out.println("                                       ");
-      System.out.println("OPÇÕES: ");
-      System.out.println("0 - voltar");
+      System.out.println("***************************************************************");
+      System.out.println("                      MENU - EasyPark                          ");
+      System.out.println("                                                               ");
+      System.out.println("INFORME UMA DAS OPÇÕES ABAIXO: ");
+      System.out.println("0 - Voltar");
       System.out.println("1 - Criar estacionamento");
       System.out.println("2 - Detalhes do estacionamento");
       System.out.println("3 - Editar estacionamento");
@@ -93,7 +93,7 @@ public class MainUI {
       System.out.println("9 - Adicionar empregado no estacionamento");
       System.out.println("10 - Remover empregado do estacionamento");
 
-      System.out.print("Digite a opção desejada: ");
+      System.out.print("Informe a sua opção desejada: ");
 
       opcao = nextInput.nextInt();
 
@@ -119,7 +119,6 @@ public class MainUI {
         break;
 
         case 5:
-          // parkingLotUI.addUserToParkingLot();
           parkingLotUI.parkingLotEntry();
         break;
         

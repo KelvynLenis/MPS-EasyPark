@@ -1,23 +1,13 @@
 package frontier;
 
 public class VehicleUI {
-  public void createVehicle() {
+  public void createVehicle() {}
 
-  }
+  public void getVehicle() {}
 
-  public void getVehicle() {
+  public void listVehicle() {}
 
-  }
+  public void updateVehicle() {}
 
-  public void listVehicle() {
-
-  }
-
-  public void updateVehicle() {
-
-  }
-
-  public void deleteVehicle() {
-
-  }
+  public void deleteVehicle() {}
 }

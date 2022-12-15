@@ -1,7 +1,6 @@
 package frontier;
 
 import java.util.Scanner;
-
 import controllers.ManagerFacade;
 
 public class UserManagerUI {
@@ -54,5 +53,4 @@ public class UserManagerUI {
   
     managerFacade.deleteUser(name);
   }
-  
 }

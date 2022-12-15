@@ -1,7 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-
 import Utils.VehicleTypes;
 import controllers.BankSlipHandler;
 import controllers.CreditCardHandler;
@@ -25,11 +24,9 @@ public class ParkingLot {
   private ArrayList<User> employees = new ArrayList<User>();
   private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
 
-
   public static ParkingLot instance;
 
-  protected ParkingLot() {
-  }
+  protected ParkingLot() {}
 
   public static ParkingLot getInstance() {
     if (instance == null) {
