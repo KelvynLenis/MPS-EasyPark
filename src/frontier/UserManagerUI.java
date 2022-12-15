@@ -13,7 +13,7 @@ public class UserManagerUI {
 
   public void createUser(){
     System.out.print("Informe o tipo de usuário do sistema: ");
-    type = userManagerInformet.nextLine();
+    type = userManagerUiInput.nextLine();
     System.out.print("Informe o nome do usuário: ");
     name = userManagerUiInput.nextLine();
     System.out.print("Informe a sua senha: ");

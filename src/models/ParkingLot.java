@@ -1,15 +1,12 @@
 package models;
 
 import java.util.ArrayList;
-import Utils.VehicleTypes;
 import controllers.BankSlipHandler;
 import controllers.CreditCardHandler;
 import controllers.CustomerPayment;
 import controllers.DebitCardHandler;
 import controllers.NotFoundPaymentHandler;
 import controllers.PixHandler;
-import models.vehicle.PriceBehaviour;
-import models.vehicle.PriceSmallCar;
 import models.vehicle.Vehicle;
 
 public class ParkingLot {
