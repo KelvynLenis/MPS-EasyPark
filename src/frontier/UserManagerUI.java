@@ -12,15 +12,12 @@ public class UserManagerUI {
   private String type;
   private String password;
 
-  public UserManagerUI(){
-  }
-
   public void createUser(){
-    System.out.print("Digite o tipo de usuário do sistema: ");
-    type = userManagerUiInput.nextLine();
-    System.out.print("Digite o nome do usuário: ");
+    System.out.print("Informe o tipo de usuário do sistema: ");
+    type = userManagerInformet.nextLine();
+    System.out.print("Informe o nome do usuário: ");
     name = userManagerUiInput.nextLine();
-    System.out.print("Digite a senha: ");
+    System.out.print("Informe a sua senha: ");
     password = userManagerUiInput.nextLine();
 
 
@@ -28,7 +25,7 @@ public class UserManagerUI {
   }
 
   public void getUser() {
-    System.out.print("Digite o nome do usuário: ");
+    System.out.print("Informe o nome do usuário: ");
     name = userManagerUiInput.nextLine();
 
     managerFacade.getUser(name);
@@ -39,20 +36,20 @@ public class UserManagerUI {
   }
 
   public void updateUser(){
-    System.out.print("Digite o nome do usuário: ");
+    System.out.print("Informe o nome do usuário: ");
     name = userManagerUiInput.nextLine();
-    System.out.print("Digite o novo nome do usuário: ");
+    System.out.print("Informe o novo nome do usuário: ");
     String newName = userManagerUiInput.nextLine();
-    System.out.print("Digite o tipo de usuário do sistema: ");
+    System.out.print("Informe o tipo de usuário do sistema: ");
     type = userManagerUiInput.nextLine();
-    System.out.print("Digite a senha: ");
+    System.out.print("Informe a sua senha: ");
     password = userManagerUiInput.nextLine();
     
     managerFacade.updateUser(name, newName, type, password);
   }
 
   public void deleteUser(){
-    System.out.print("Digite o nome do usuário: ");
+    System.out.print("Informe o nome do usuário: ");
     name = userManagerUiInput.nextLine();
   
     managerFacade.deleteUser(name);

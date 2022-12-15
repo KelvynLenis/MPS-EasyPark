@@ -124,7 +124,6 @@ public class MainUI {
         break;
         
         case 6:
-          // parkingLotUI.removeUserFromParkingLot();
           parkingLotUI.parkingLotExit();
         break;
 

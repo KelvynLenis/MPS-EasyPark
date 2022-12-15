@@ -3,7 +3,6 @@ package frontier;
 import java.util.Scanner;
 
 import controllers.ManagerFacade;
-// import models.User;
 
 public class ParkingLotUI {
   private Scanner parkingLotUiInput = new Scanner(System.in);
