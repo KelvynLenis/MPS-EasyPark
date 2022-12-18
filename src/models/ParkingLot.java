@@ -1,12 +1,6 @@
 package models;
 
 import java.util.ArrayList;
-import controllers.BankSlipHandler;
-import controllers.CreditCardHandler;
-import controllers.CustomerPayment;
-import controllers.DebitCardHandler;
-import controllers.NotFoundPaymentHandler;
-import controllers.PixHandler;
 import models.vehicle.Vehicle;
 
 public class ParkingLot {
@@ -149,19 +143,11 @@ public class ParkingLot {
     this.availableVacanciesNumber--;
   }
 
-  public void parkingLotExit(int controlNumber, String methodPayment) {
-    CustomerPayment payment = new CustomerPayment(methodPayment);
-    PixHandler pixHandler = new PixHandler();
-    pixHandler
-      .setNextHander(new DebitCardHandler())
-      .setNextHander(new CreditCardHandler())
-      .setNextHander(new BankSlipHandler())
-      .setNextHander(new NotFoundPaymentHandler());
-
-    pixHandler.handle(payment);
+  public void parkingLotExit(int controlNumber) {
+    
 
     for (Vehicle vehicle : vehicles) {
-      if (vehicle.getControlNumber() == controlNumber && payment.acceptPayment) {
+      if (vehicle.getControlNumber() == controlNumber) {
         vehicles.remove(vehicle);
         this.availableVacanciesNumber++;
         break;

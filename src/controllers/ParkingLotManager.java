@@ -146,7 +146,19 @@ public class ParkingLotManager {
   }
 
   public void parkingLotExit(int controlNumber, String methodPayment){
-    parkingLot.parkingLotExit(controlNumber, methodPayment);
+    CustomerPayment payment = new CustomerPayment(methodPayment);
+    PixHandler pixHandler = new PixHandler();
+    pixHandler
+      .setNextHander(new DebitCardHandler())
+      .setNextHander(new CreditCardHandler())
+      .setNextHander(new BankSlipHandler())
+      .setNextHander(new NotFoundPaymentHandler());
+
+    pixHandler.handle(payment);
+
+    if(payment.acceptPayment){
+      parkingLot.parkingLotExit(controlNumber);
+    }
   }
 
 }
